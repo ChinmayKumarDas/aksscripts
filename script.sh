@@ -3,7 +3,9 @@
 echo -e '\t \t Welcome to the L200 Troubleshooting sessions'
 echo -e '\t \t ********************************************'
 echo -e "***Please sit tight while we create a cluster for you. It is absolute pleasure to assist you***\n \n \n"
-echo -e "Please provide the Resource Group Name\n"
+echo -e "\nPlease ensure you login to your respective azure account using az login after each scenario got completed\n"
+echo -e "NOTE: Each scenario requires a new cluster to be created\n"
+echo -e "Please provide the Resource Group Name required to create the AKS Cluster for troubleshooting\n"
 read myResourceGroup
 az group create --name $myResourceGroup --location eastus &>/dev/null
 if [ $? -eq 0 ]

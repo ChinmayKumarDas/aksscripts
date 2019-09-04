@@ -6,7 +6,7 @@ read clname
 az aks get-credentials -g $rgname -n $clname &>/dev/null
 
 nodecount=`kubectl get nodes | grep aks | wc -l` >/tmp/scen2
-if [ $nodecount == 5 ]
+if [ $nodecount == 1 ]
 then
 echo stopeffortsweet
 else
