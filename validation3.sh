@@ -1,9 +1,9 @@
 #!/bin/bash
 echo "Please enter the ResourceGroup name"
-read rgname
+read myResourceGroup
 echo "please enter the cluster name"
-read clname
-az aks get-credentials -g $rgname -n $clname &>/dev/null
+read myAKSCluster
+az aks get-credentials -g $myResourceGroup -n $myAKSCluster &>/dev/null
 az aks scale -g $myResourceGroup -n $myAKSCluster -c 2
 kubectl get nodes | grep "NotReady" >/dev/null
 if [ $? == 0 ]
